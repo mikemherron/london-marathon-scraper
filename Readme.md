@@ -5,6 +5,7 @@ does not contain the clubs - I was only really interested in using the results t
 over the years, so didn't include these.
 
 #Data
+
 After running, `data/processed/results.csv` and `data/processed/clubs.csv` contain the 2014-2019 mass start results. 
 
 _data/processed/results.csv_ and _data/raw/[race]/[race]-[n].csv_
@@ -38,6 +39,7 @@ _data/processed/clubs.csv_
 | 2 | Country - club country |
 
 #Usage
+
 To generate the data:
 
 1. Run `/cmd/scraper/main.go` to pull down data for the year or years you want.
