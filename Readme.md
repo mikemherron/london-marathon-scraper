@@ -1,14 +1,16 @@
+# London Marathon Scraper
+
 A quick and dirty collection (no real error handling, no tests) of Go programs to scrape, sanitise and consolidate anonymous london marathon results 
 and output in CSV format for analysis. The project only pulls down the mass start results, for men-only, and only back 
 to 2014. Although other result pages back to 2010 are accessible by directly manipulating the URL, the results format 
 does not contain the clubs - I was only really interested in using the results to find out top scottish club times 
 over the years, so didn't include these.
 
-#Data
+## Data
 
 After running, `data/processed/results.csv` and `data/processed/clubs.csv` contain the 2014-2019 mass start results. 
 
-_data/processed/results.csv_ and _data/raw/[race]/[race]-[n].csv_
+### Results - data/processed/results.csv and data/raw/*race*/*race*-*n*.csv
 
 | Col Number | Description |
 | --- | ----------- |
@@ -19,7 +21,7 @@ _data/processed/results.csv_ and _data/raw/[race]/[race]-[n].csv_
 | 4 | Halfway time in seconds |
 | 5 | Finish time in seconds |
 
-_data/raw/clubs.csv_ 
+### Raw Clubs - data/raw/clubs.csv 
 
 __See step 3 in Usage below__
 
@@ -31,14 +33,14 @@ __See step 3 in Usage below__
 | 4 | Ignore - if true, will not be present in final results |
 | 5 | Processed - Set to true for new entries when updating to identify records that must be changed. Should be false to updated records.  |
 
-_data/processed/clubs.csv_
+### Canonical Clubs - data/raw/clubs.csv 
 
 | Col Number | Description |
 | --- | ----------- |
 | 1 | Club - canonical club name |
 | 2 | Country - club country |
 
-#Usage
+## Usage
 
 To generate the data:
 
