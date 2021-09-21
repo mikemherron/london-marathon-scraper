@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"london-results/internal/files"
 	"london-results/internal/util"
+	"os"
 	"path/filepath"
 	"sort"
 	"strconv"
@@ -41,6 +42,8 @@ func (r *ResultCollector) Flush() {
 	if len(r.results) == 0 {
 		return
 	}
+
+	_ = os.MkdirAll(r.folderPath, os.ModePerm)
 
 	fileName := filepath.Join(r.folderPath, fmt.Sprintf("%s-%d.csv", r.filePrefix, r.flushed+1))
 	r.results.Save(fileName)

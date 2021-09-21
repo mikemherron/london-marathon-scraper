@@ -58,13 +58,13 @@ func main() {
 	flag.Parse()
 
 	spec, raceExists := specs[*raceName]
-	if *dataDir == "" || raceExists {
+	if *dataDir == "" || !raceExists {
 		fmt.Print("Scrapes london marathon results from the specified year and stores in a series of CSV files.\n")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
 
-	spec.scraper(*raceName, *dataDir, resultsDomain+spec.url)
+	spec.scraper(*raceName, resultsDomain+spec.url, *dataDir)
 }
 
 func availableRaces() []string {
